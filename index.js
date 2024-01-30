@@ -50,6 +50,25 @@ app.get('/api/persons/:id', (req, res) => {
   }
 })
 
+app.post('/api/persons', (req, res) => {
+  const body = req.body;
+
+  if(!body.name || !body.number) {
+    return res.status(400).json({
+      error: 'name or number is missing'
+    })
+  }
+
+  const person = {
+    id: Math.floor(Math.random() * 1000),
+    name: body.name,
+    number: body.number
+  }
+
+  persons = persons.concat(person);
+  res.json(person);
+})
+
 app.delete('/api/persons/:id', (req, res) => {
   const id = Number(req.params.id);
   persons = persons.filter(person => person.id !== id);
