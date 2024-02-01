@@ -1,0 +1,18 @@
+### GET PERSONS
+
+GET http://localhost:3001/api/persons
+
+### GET PERSON BY ID
+
+GET http://localhost:3001/api/persons/1
+
+### CREATE PERSON
+
+POST http://localhost:3001/api/persons
+Content-Type: application/json
+
+{
+  "name": "Caren Lorrence",
+  "number": "123-456-7780"
+}
+
